@@ -1,0 +1,54 @@
+.profile-header {
+  text-align: center;
+  /* Centre tout le contenu dans l'en-tête */
+  padding: 20px;
+}
+
+/* Styling for the header */
+ion-header {
+  background-color: #4caf50;
+  /* Vert pour le fond du header */
+  color: white;
+  /* Texte blanc pour contraster */
+}
+
+/* Styling for the toolbar */
+ion-toolbar {
+  --background: #4caf50;
+  /* Fond vert pour la barre d'outils */
+  color: white;
+  /* Texte blanc dans la barre d'outils */
+}
+
+/* Styling for the back button */
+ion-back-button {
+  --color: white;
+  /* Couleur blanche pour le bouton de retour */
+}
+
+ion-avatar {
+  margin: 0 auto;
+  width: 120px;
+  /* Size of the profile picture */
+  height: 120px;
+  /* Size of the profile picture */
+  border-radius: 50%;
+  /* Circular shape for the avatar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Shadow around the avatar for a 3D effect */
+}
+
+h2,
+p {
+  margin: 10px 0;
+  /* Espacement autour du nom et de l'ID */
+}
+
+.status {
+  font-size: 14px;
+  color: green;
+}
+
+ion-button {
+  margin-top: 10px;
+}

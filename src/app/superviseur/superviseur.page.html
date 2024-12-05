@@ -1,0 +1,83 @@
+<<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="white"></ion-back-button> <!-- Bouton de retour en blanc -->
+    </ion-buttons>
+    <ion-title>Superviseur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <!-- Profil du Superviseur -->
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar" (click)="afficherImageProfil()">
+      <img [src]="superviseur.photo" alt="Superviseur">
+    </ion-avatar>
+    <h2>{{ superviseur.nom }}</h2>
+    <p>ID: {{ superviseur.id }}</p>
+    <p class="status">En ligne</p>
+    <ion-button fill="clear" (click)="changePhoto()">Modifier</ion-button> <!-- Correction: Bouton de modification -->
+  </div><br>
+
+  <!-- Onglets pour gérer les fonctionnalités -->
+  <ion-segment [(ngModel)]="currentTab">
+    <ion-segment-button value="commerciaux">
+      <ion-label>Commerciaux</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="objectifs">
+      <ion-label>Objectifs</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="performances">
+      <ion-label>Performances</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Section des commerciaux -->
+  <ng-container *ngIf="currentTab === 'commerciaux'">
+    <ion-list>
+      <ion-item *ngFor="let commercial of superviseur.commerciaux">
+        <ion-avatar slot="start">
+          <img src="assets/avatar-placeholder.png" alt="Commercial">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ commercial.nom }}</h2>
+          <p>Performance : {{ commercial.performance }}%</p>
+        </ion-label>
+        <ion-button fill="outline" slot="end" (click)="validerVisite(commercial)">
+          Valider Visites
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <!-- Section des objectifs -->
+  <ng-container *ngIf="currentTab === 'objectifs'">
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="nouvelObjectif.description" placeholder="Définir un nouvel objectif"></ion-input>
+        <ion-button (click)="definirObjectif()">Ajouter</ion-button>
+      </ion-item>
+      <ion-item *ngFor="let objectif of objectifs">
+        <ion-label>
+          <h2>{{ objectif.description }}</h2>
+          <p>Assigné à : {{ objectif.nomCommercial }}</p>
+        </ion-label>
+        <ion-icon name="checkmark-circle-outline" slot="end" color="success"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <!-- Section des performances -->
+  <ng-container *ngIf="currentTab === 'performances'">
+    <ion-list>
+      <ion-item *ngFor="let performance of performances">
+        <ion-label>
+          <h2>{{ performance.nomCommercial }}</h2>
+          <p>Ventes : {{ performance.ventes }} / Objectif : {{ performance.objectif }}</p>
+        </ion-label>
+        <ion-progress-bar [value]="performance.progress"></ion-progress-bar>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+</ion-content>

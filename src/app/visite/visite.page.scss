@@ -1,0 +1,155 @@
+/* Couleur du header */
+ion-header {
+  --background: #4CAF50;
+  /* Vert */
+  --color: white;
+  /* Texte en blanc */
+}
+
+ion-toolbar {
+  --background: #4CAF50;
+  /* Vert pour la barre d'outils */
+  --color: white;
+  /* Couleur du texte */
+}
+ion-back-button {
+  color: white;
+  /* Définit la couleur du texte et de l'icône en blanc */
+}
+
+/* Couleur des cartes */
+ion-card {
+  --background: #f1f1f1;
+  /* Gris clair pour l'arrière-plan des cartes */
+  --color: #333;
+  /* Texte en gris foncé */
+  margin: 15px 10px;
+  /* Marge autour des cartes */
+  border-radius: 10px;
+  /* Coins arrondis pour les cartes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Ombre douce pour les cartes */
+}
+
+ion-card-header {
+  --background: #e0e0e0;
+  /* Gris pour l'en-tête des cartes */
+  border-top-left-radius: 10px;
+  /* Coins arrondis en haut à gauche */
+  border-top-right-radius: 10px;
+  /* Coins arrondis en haut à droite */
+}
+
+ion-card-title {
+  font-weight: bold;
+  color: #007bff;
+  /* Bleu pour le titre des cartes */
+  font-size: 1.2em;
+  /* Taille du titre augmentée */
+}
+
+/* Formulaire */
+ion-item {
+  --background: #fff;
+  /* Fond blanc pour les items */
+  --border-color: #ddd;
+  /* Couleur des bordures des éléments de formulaire */
+  margin-bottom: 15px;
+  /* Espacement entre les éléments du formulaire */
+}
+
+ion-input,
+ion-datetime,
+ion-select {
+  --padding-start: 10px;
+  /* Espacement à gauche */
+  --padding-end: 10px;
+  /* Espacement à droite */
+}
+
+ion-label {
+  color: #333;
+  /* Gris foncé pour les labels */
+}
+
+/* Couleur des boutons */
+ion-button {
+  --background: #4CAF50;
+  /* Vert pour les boutons */
+  --color: white;
+  /* Texte en blanc */
+  margin-top: 15px;
+  border-radius: 5px;
+  /* Coins arrondis */
+  padding: 10px 0;
+  /* Espacement intérieur */
+}
+
+ion-button[color="danger"] {
+  --background: #f44336;
+  /* Rouge pour le bouton de stock faible */
+  --color: white;
+  /* Texte en blanc */
+}
+
+/* Liste des visites */
+ion-list {
+  margin-top: 20px;
+  /* Espacement au-dessus de la liste */
+}
+
+ion-item {
+  --background: #ffffff;
+  /* Fond blanc pour chaque item */
+  margin-bottom: 10px;
+  /* Espacement entre les éléments de la liste */
+  padding: 10px;
+  border-radius: 5px;
+  /* Coins arrondis pour les items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Ombre douce */
+}
+
+ion-item ion-label {
+  font-weight: bold;
+  /* Met en gras les noms des points de vente */
+}
+
+ion-item ion-label p {
+  color: #666;
+  /* Gris clair pour les dates et les statuts */
+}
+
+/* Commentaire et questionnaire */
+ion-textarea {
+  --background: #f9f9f9;
+  /* Fond léger pour la zone de commentaire */
+  --color: #333;
+  /* Couleur du texte */
+  --border-color: #ddd;
+  /* Couleur des bordures */
+  margin-bottom: 10px;
+}
+
+ion-button[expand="block"] {
+  margin-top: 10px;
+  /* Espacement entre les boutons */
+  --background: #007bff;
+  /* Bleu pour les boutons supplémentaires */
+  --color: white;
+  /* Texte en blanc */
+}
+
+/* Style général du contenu */
+ion-content {
+  --background: #ffffff;
+  /* Blanc pour l'arrière-plan de la page */
+}
+
+ion-card {
+  margin: 10px;
+}
+
+ion-button {
+  margin-top: 10px;
+}

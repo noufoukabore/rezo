@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Administrateur</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <!-- Avatar Section -->
+    <div class="profile-avatar-container">
+      <ion-avatar class="profile-avatar">
+        <img [src]="admin.photo" alt="Photo de profil">
+      </ion-avatar>
+      <h2>{{ admin.nom }}</h2>
+      <p>ID: {{ admin.id }}</p>
+      <p class="status">En ligne</p>
+      <ion-button class="edit-photo-btn" fill="outline" (click)="modifierPhoto()">
+        Modifier
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="manage-accounts-container">
+    <h2>Gérer les comptes</h2>
+    <ion-list>
+      <!-- Liste des utilisateurs avec gestion -->
+      <ion-item *ngFor="let utilisateur of utilisateurs">
+        <ion-label>
+          {{ utilisateur.nom }} ({{ utilisateur.role }})
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="success" (click)="modifierCompte(utilisateur)">Modifier</ion-button>
+          <ion-button color="danger" (click)="supprimerCompte(utilisateur.id)">Supprimer</ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="add-user-container">
+    <h2>Ajouter un utilisateur</h2>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input [(ngModel)]="nouvelUtilisateur.nom" placeholder="Nom"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Prénom</ion-label>
+        <ion-input [(ngModel)]="nouvelUtilisateur.prenom" placeholder="Prénom"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="nouvelUtilisateur.email" placeholder="Email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Rôle</ion-label>
+        <ion-select [(ngModel)]="nouvelUtilisateur.role" placeholder="Sélectionner un rôle">
+          <ion-select-option value="commercial">Commercial</ion-select-option>
+          <ion-select-option value="superviseur">Superviseur</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" color="secondary" (click)="ajouterUtilisateur()">Ajouter</ion-button>
+  </div>
+
+  <div class="approve-salespoint-container">
+    <h2>Approuver les points de vente</h2>
+    <ion-list>
+      <ion-item *ngFor="let point of pointsDeVenteEnAttente">
+        <ion-label>
+          <h2>{{ point.nom }}</h2>
+          <p>{{ point.adresse }}</p>
+        </ion-label>
+        <ion-button color="success" (click)="approuverPointDeVente(point.id)">Approuver</ion-button>
+        <ion-button color="danger" (click)="rejectPointOfSale(point.id)">Rejeter</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

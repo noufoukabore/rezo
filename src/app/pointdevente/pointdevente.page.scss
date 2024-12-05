@@ -1,0 +1,140 @@
+/* En-tête */
+ion-header {
+  --background: #4CAF50;
+  /* Fond vert */
+  --color: white;
+  /* Texte blanc */
+}
+
+ion-toolbar {
+  --background: #4CAF50;
+}
+
+ion-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Liste des points de vente */
+ion-list {
+  padding: 10px;
+}
+
+ion-item {
+  --background: #ffffff;
+  /* Fond blanc pour chaque item */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Ombre légère */
+}
+
+ion-label h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  /* Gris foncé */
+}
+
+ion-label p {
+  color: #666;
+  /* Texte des détails en gris */
+  font-size: 0.9em;
+}
+
+ion-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Boutons d'action */
+ion-button {
+  --background: #4CAF50;
+  /* Couleur par défaut pour le bouton d'ajout */
+  --color: white;
+  margin: 5px;
+}
+
+ion-button[color="primary"] {
+  --background: #2196F3;
+  /* Bleu pour le bouton de modification */
+}
+
+ion-button[color="danger"] {
+  --background: #f44336;
+  /* Rouge pour le bouton de suppression */
+}
+
+ion-button[color="secondary"] {
+  --background: #FF9800;
+  /* Orange pour le bouton de consultation de stock */
+}
+
+ion-button[color="success"] {
+  --background: #4CAF50;
+  /* Vert pour le bouton de commande */
+}
+
+/* Bouton "Ajouter un Point de Vente" */
+ion-button[expand="full"] {
+  margin-top: 15px;
+  --background: #4CAF50;
+  font-weight: bold;
+}
+
+/* Modal */
+ion-modal {
+  --width: 90%;
+  --height: 80%;
+  --border-radius: 8px;
+}
+
+ion-modal ion-header {
+  --background: #4CAF50;
+  --color: white;
+}
+
+ion-modal ion-toolbar ion-title {
+  font-weight: bold;
+}
+
+ion-modal ion-content {
+  padding: 20px;
+}
+
+ion-item[ion-modal] {
+  --background: #f9f9f9;
+  /* Fond clair pour les items dans le modal */
+  margin-bottom: 10px;
+}
+
+ion-input {
+  color: #333;
+  /* Gris foncé pour le texte des inputs */
+}
+
+ion-button[ion-modal] {
+  margin-top: 15px;
+}
+
+/* Géolocalisation et carte */
+#map {
+  height: 200px;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  /* Bordure grise pour délimiter la carte */
+  border-radius: 4px;
+}
+
+/* Bouton de géolocalisation */
+ion-button ion-icon[name="location-outline"] {
+  font-size: 1.2em;
+  color: #4CAF50;
+  /* Icône verte */
+}
+
+/* Champ de téléchargement de document */
+input[type="file"] {
+  padding: 10px 0;
+}

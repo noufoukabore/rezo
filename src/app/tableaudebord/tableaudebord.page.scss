@@ -1,0 +1,100 @@
+// Variables de couleurs
+$primary-color: #1e3799; // Couleur principale (bleu foncé)
+$secondary-color: #38ada9; // Couleur secondaire (vert-bleu)
+$tertiary-color: #e55039; // Couleur tertiaire (orange-rouge)
+$background-color: #ffffff; // Arrière-plan blanc
+$text-color: #2f3542; // Texte gris foncé
+$card-background-color: #ffffff; // Fond des cartes blanc
+$shadow-color: rgba(0, 0, 0, 0.1); // Ombre légère pour les cartes
+
+// Style global pour la page tableau de bord
+ion-header {
+  background-color: $primary-color;
+  color: #ffffff;
+
+  ion-toolbar {
+    --background: $primary-color;
+    --color: #ffffff;
+
+    ion-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    ion-back-button {
+      color: #ffffff;
+    }
+  }
+}
+
+ion-content {
+  background-color: $background-color; // Arrière-plan blanc
+  padding: 16px;
+
+  // Grille des statistiques
+  ion-grid {
+    ion-row {
+      margin-bottom: 16px;
+
+      ion-col {
+        ion-card {
+          background-color: $card-background-color; // Fond blanc des cartes
+          border-radius: 12px; // Bordures arrondies
+          box-shadow: 0px 4px 8px $shadow-color; // Ombre légère
+
+          ion-card-header {
+            background-color: lighten($tertiary-color, 10%); // Couleur d'entête des cartes (orange clair)
+            padding: 12px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+
+            ion-card-title {
+              color: $text-color; // Couleur du texte
+              font-size: 18px;
+              font-weight: bold;
+              text-align: center;
+            }
+          }
+
+          ion-card-content {
+            padding: 16px;
+
+            h2 {
+              font-size: 24px;
+              font-weight: bold;
+              color: $primary-color; // Texte des cartes (bleu foncé)
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Liste des raccourcis
+  ion-list {
+    background-color: $card-background-color; // Fond blanc pour la liste
+    border-radius: 12px; // Bordures arrondies
+    box-shadow: 0px 4px 8px $shadow-color; // Ombre légère
+    padding: 10px;
+
+    ion-item {
+      --background: transparent; // Fond transparent des items
+      --border-color: $primary-color; // Couleur de bordure
+      border-radius: 8px;
+      margin-bottom: 8px;
+
+      ion-icon {
+        color: $secondary-color; // Icônes vert-bleu
+        font-size: 20px;
+      }
+
+
+      button {
+        font-size: 16px;
+        color: $text-color; // Texte gris foncé
+      }
+    }
+  }
+}

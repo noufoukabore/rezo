@@ -1,0 +1,91 @@
+/* En-tête et barre d'outils */
+ion-header {
+  --background: #4CAF50;
+  /* Vert pour le header */
+  --color: white;
+  /* Texte en blanc */
+}
+
+ion-toolbar {
+  --background: #4CAF50;
+  /* Vert pour la barre d'outils */
+  --color: white;
+}
+
+ion-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Boutons de navigation et actions */
+ion-back-button {
+  --color: white;
+  /* Blanc pour le bouton de retour */
+}
+
+ion-button {
+  --background: #4CAF50;
+  /* Vert pour les boutons */
+  --color: white;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+ion-button[color="danger"] {
+  --background: #f44336;
+  /* Rouge pour le bouton de suppression */
+  --color: white;
+}
+
+/* Formulaire */
+form {
+  padding: 10px;
+}
+
+ion-item {
+  margin-bottom: 15px;
+  --background: #ffffff;
+  /* Blanc pour le fond des items */
+  --color: #333;
+  /* Gris foncé pour le texte */
+  border-radius: 8px;
+}
+
+ion-label {
+  font-weight: bold;
+}
+
+ion-input {
+  color: #333;
+  /* Gris foncé pour le texte des inputs */
+}
+
+/* Prix total en lecture seule */
+ion-item ion-input[readonly] {
+  --color: #4CAF50;
+  /* Vert pour le prix total */
+  font-weight: bold;
+}
+
+/* Liste des produits */
+ion-list {
+  padding-top: 20px;
+}
+
+ion-item h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff;
+  /* Bleu pour le titre des produits */
+}
+
+ion-item p {
+  margin: 0;
+  color: #333;
+  /* Gris foncé pour les détails des produits */
+}
+
+/* Margins for buttons inside product list */
+ion-item ion-button {
+  margin-left: 8px;
+}

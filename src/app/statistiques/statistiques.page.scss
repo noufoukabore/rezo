@@ -1,0 +1,103 @@
+/* En-tête et barre d'outils */
+ion-header {
+  --background: #4CAF50;
+  /* Vert */
+  --color: white;
+  /* Texte en blanc */
+}
+
+ion-toolbar {
+  --background: #4CAF50;
+  /* Vert pour la barre d'outils */
+  --color: white;
+}
+
+ion-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Boutons d'action */
+ion-button {
+  --background: #4CAF50;
+  /* Vert pour les boutons */
+  --color: white;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+ion-button[color="primary"] {
+  --background: #007bff;
+  /* Bleu pour les boutons principaux */
+  --color: white;
+}
+
+/* Icône de rafraîchissement */
+ion-icon[name="refresh"] {
+  font-size: 1.2em;
+}
+
+/* Chargement */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-spinner {
+  --color: #4CAF50;
+  /* Couleur verte pour le spinner */
+}
+
+/* Cartes */
+ion-card {
+  --background: #f1f1f1;
+  /* Gris clair pour le fond des cartes */
+  --color: #333;
+  /* Texte en gris foncé */
+  margin: 10px;
+}
+
+ion-card-header {
+  --background: #e0e0e0;
+  /* Gris un peu plus foncé pour l'en-tête des cartes */
+}
+
+ion-card-title {
+  font-weight: bold;
+  color: #007bff;
+  /* Bleu pour le titre des cartes */
+}
+
+ion-card-content {
+  padding: 20px;
+}
+
+/* Colonnes et graphiques */
+ion-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+ion-col {
+  margin-bottom: 15px;
+}
+
+#visitesChart,
+#ventesChart {
+  width: 100%;
+  height: 300px;
+  background-color: #ffffff;
+  /* Fond blanc pour les graphiques */
+  border-radius: 8px;
+}
+
+/* Bouton de génération de rapport */
+ion-button[expand="full"] {
+  margin-top: 20px;
+  --background: #007bff;
+  /* Bleu pour le bouton de rapport */
+  --color: white;
+}

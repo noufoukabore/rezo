@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="commercial"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gestion des Visites</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="scanQRCode()">
+        <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Formulaire pour planifier une visite -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Planifier une Visite</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="planifierVisite()">
+        <ion-item>
+          <ion-label position="floating">ID Point de Vente</ion-label>
+          <ion-input type="number" [(ngModel)]="visiteForm.idPointDeVente" name="idPointDeVente" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nom du Point de Vente</ion-label>
+          <ion-input type="text" [(ngModel)]="visiteForm.nomPointDeVente" name="nomPointDeVente" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date de Visite</ion-label>
+          <ion-datetime [(ngModel)]="visiteForm.dateVisite" name="dateVisite" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Statut</ion-label>
+          <ion-select [(ngModel)]="visiteForm.statut" name="statut" required>
+            <ion-select-option value="En attente">En attente</ion-select-option>
+            <ion-select-option value="En cours">En cours</ion-select-option>
+            <ion-select-option value="Passée">Passée</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button expand="full" type="submit" color="primary">
+          Enregistrer
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Liste des visites -->
+  <ion-list>
+    <ion-item *ngFor="let visite of visites">
+      <ion-label>
+        <h2>{{ visite.nomPointDeVente }}</h2>
+        <p>Date: {{ visite.dateVisite | date }}</p>
+        <p>Statut: {{ visite.statut }}</p>
+      </ion-label>
+      <ion-button (click)="enregistrerCommentaire(visite.id, 'Exemple de commentaire')">
+        Ajouter un Commentaire
+      </ion-button>
+      <ion-button color="secondary" (click)="demanderApprobation(visite.id)">
+        Demander Approbation
+      </ion-button>
+      <ion-button color="warning" (click)="demanderValidation(visite.id)">
+        Demander Validation
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

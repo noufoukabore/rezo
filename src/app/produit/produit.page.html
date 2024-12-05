@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-button routerLink="/connexion">
+        <ion-icon slot="icon-only" name="arrow-back" class="icon-white"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+    <ion-title>Gestion des Produits</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Le formulaire commence ici -->
+  <form (ngSubmit)="ajouter()" #produitForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Nom du Produit</ion-label>
+      <ion-input type="text" [(ngModel)]="produit.nom" name="nom" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Catégorie</ion-label>
+      <ion-input type="text" [(ngModel)]="produit.categorie" name="categorie" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Quantité</ion-label>
+      <ion-input type="number" [(ngModel)]="produit.quantite" name="quantite" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Prix unitaire en FCFA</ion-label>
+      <ion-input type="number" [(ngModel)]="produit.prixUnitaire" name="prixUnitaire" required></ion-input>
+    </ion-item>
+
+    <!-- Prix total calculé automatiquement -->
+    <ion-item>
+      <ion-label>Prix total (FCFA)</ion-label>
+      <ion-input type="number" [value]="calculerPrixTotal()" readonly></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Ajouter Produit</ion-button>
+  </form>
+  <!-- Le formulaire se termine ici -->
+
+  <!-- Liste des produits -->
+  <ion-list>
+    <ion-item *ngFor="let p of produits">
+      <ion-label>
+        <h2>{{ p.nom }}</h2>
+        <p>Catégorie : {{ p.categorie }}</p>
+        <p>Quantité : {{ p.quantite }}</p>
+        <p>Prix unitaire : {{ p.prixUnitaire }} FCFA</p>
+        <p>Prix total : {{ p.quantite * p.prixUnitaire }} FCFA</p>
+      </ion-label>
+      <ion-button (click)="modifier(p)">Modifier</ion-button>
+      <ion-button (click)="supprimer(p.id)">Supprimer</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

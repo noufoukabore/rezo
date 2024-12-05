@@ -1,0 +1,7 @@
+{
+  "name": "RézoPro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

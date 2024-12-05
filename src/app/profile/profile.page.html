@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gestion de Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Section Profil -->
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <img [src]="user.photo || defaultPhoto" alt="Photo de profil" />
+    </ion-avatar>
+    <ion-button fill="clear" (click)="changePhoto()">Modifier</ion-button>
+  </div>
+
+  <ion-list>
+    <!-- Nom -->
+    <ion-item>
+      <ion-label position="stacked">Nom</ion-label>
+      <ion-input [(ngModel)]="user.name" placeholder="Entrez votre nom"></ion-input>
+    </ion-item>
+
+    <!-- À propos -->
+    <ion-item>
+      <ion-label position="stacked">À propos</ion-label>
+      <ion-textarea [(ngModel)]="user.about" placeholder="Décrivez-vous"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <!-- Section Gestion des Utilisateurs -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gestion des Utilisateurs</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let user of users">
+          <ion-label>{{ user.name }} ({{ user.role }})</ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="danger" (click)="deleteUser(user.id)">Supprimer</ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" (click)="openAddUserModal()">Ajouter un Utilisateur</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Section Approbation des Points de Vente -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Demandes de Points de Vente</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let request of pendingRequests">
+          <ion-label>
+            {{ request.name }}
+            <ion-note>{{ request.submittedBy }}</ion-note>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="success" (click)="approvePointOfSale(request.id)">Approuver</ion-button>
+            <ion-button color="danger" (click)="rejectPointOfSale(request.id)">Rejeter</ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

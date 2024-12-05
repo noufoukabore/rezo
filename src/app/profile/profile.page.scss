@@ -1,0 +1,24 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* Makes the image circular */
+  overflow: hidden;
+  border: 4px solid #3880ff;
+  /* Optional: Adds a border around the avatar */
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image fills the circle */
+}

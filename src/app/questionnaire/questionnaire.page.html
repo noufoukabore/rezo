@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestion des Questionnaires</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Début du bloc -->
+  <div class="content-block">
+    <ion-list>
+      <ion-item *ngFor="let question of questionnaire.questions; let i = index">
+        <ion-label position="stacked">Question {{ i + 1 }}</ion-label>
+        <ion-input [(ngModel)]="question.text" placeholder="Saisissez une question"></ion-input>
+        <ion-input [(ngModel)]="question.reponse" placeholder="Saisissez une réponse"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button expand="block" (click)="ajouterQuestion()">Ajouter une question</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-button expand="block" (click)="validerQuestionnaire()">Valider le Questionnaire</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!-- Fin du bloc -->
+</ion-content>

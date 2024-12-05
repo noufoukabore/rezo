@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Gestion des Photos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button aria-label="Ouvrir le menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Liste des Photos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Liste des Photos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <!-- Affichage des photos -->
+          <ion-col size="6" size-md="3" *ngFor="let photo of photos; let i = index">
+            <ion-card class="photo-card">
+            <img [src]="photo.url" [alt]="'Photo de visite numéro ' + (i + 1) + ', prise le ' + (photo.date | date: 'medium')"
+              [title]="'Photo de visite numéro ' + (i + 1) + ', prise le ' + (photo.date | date: 'medium')"
+              aria-label="'Photo de visite numéro ' + (i + 1) + ', prise le ' + (photo.date | date: 'medium')" />
+
+
+              <ion-card-content>
+                <ion-text>{{ photo.date | date: 'short' }}</ion-text>
+                <div class="photo-actions">
+                  <ion-button
+                    fill="clear"
+                    color="danger"
+                    (click)="supprimerPhoto(photo)"
+                    aria-label="Supprimer la photo">
+                    <ion-icon slot="icon-only" name="trash-outline" aria-hidden="true"></ion-icon>
+                  </ion-button>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <!-- Message si aucune photo n'est disponible -->
+        <ion-row *ngIf="photos.length === 0">
+          <ion-col>
+            <ion-text color="medium">Aucune photo disponible.</ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Téléchargement de nouvelles photos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Télécharger une Nouvelle Photo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" for="photo-upload">Choisissez une photo</ion-label>
+        <input
+          type="file"
+          id="photo-upload"
+          accept="image/*"
+          (change)="uploaderPhoto($event)"
+          title="Sélectionnez une image à télécharger"
+          aria-label="Sélectionner une photo à télécharger" />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,93 @@
+ion-content {
+  --background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+  /* Arrière-plan avec un dégradé doux */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  .padding {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+
+    img {
+      width: 100px;
+      /* Taille du logo */
+      height: auto;
+      border-radius: 50%;
+      /* Effet arrondi */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      /* Légère ombre portée */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        /* Agrandissement au survol */
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  ion-item {
+    --background: transparent;
+    margin: 10px 0;
+    --inner-padding-start: 10px;
+    /* Pour un meilleur espacement */
+  }
+
+  ion-label {
+    font-size: 1rem;
+    color: #0078d4;
+    /* Couleur douce pour le texte */
+  }
+
+  ion-input {
+    --background: white;
+    width: 100%;
+    /* Prend toute la largeur du conteneur parent */
+    padding-left: 30px;
+    /* Espacement à gauche */
+    padding-right: 30px;
+    /* Espacement à droite */
+
+    --placeholder-color: primary;
+    /* Couleur du placeholder */
+    --color: primary;
+    /* Couleur du texte */
+    border: 1px solid #0078d4;
+    /* Bordure légère */
+
+  }
+
+  ion-button {
+    margin-top: 20px;
+    --background: #0078d4;
+    /* Bleu vif */
+    --background-hover: #005bb5;
+    /* Bleu plus foncé au survol */
+    --border-radius: 10px;
+    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

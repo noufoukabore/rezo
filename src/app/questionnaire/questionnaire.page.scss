@@ -1,0 +1,77 @@
+/* En-tête et barre d'outils */
+ion-header {
+  --background: #4CAF50;
+  /* Vert pour l'en-tête */
+  --color: white;
+  /* Texte en blanc */
+}
+
+ion-toolbar {
+  --background: #4CAF50;
+  /* Vert pour la barre d'outils */
+  --color: white;
+}
+
+ion-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Boutons */
+ion-button {
+  --background: #4CAF50;
+  /* Vert pour les boutons principaux */
+  --color: white;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+ion-button[expand="block"] {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Bloc de contenu */
+.content-block {
+  padding: 20px;
+}
+
+/* Liste des questions */
+ion-item {
+  margin-bottom: 10px;
+  --background: #ffffff;
+  /* Fond blanc pour chaque item */
+  --color: #333;
+  /* Texte gris foncé */
+  border-radius: 8px;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #333;
+  /* Gris foncé pour le texte des labels */
+}
+
+ion-input {
+  color: #333;
+  /* Gris foncé pour le texte des inputs */
+}
+
+/* Placeholders */
+ion-input::part(native)::-webkit-input-placeholder {
+  color: #999;
+  /* Placeholder en gris clair */
+}
+
+ion-input::part(native)::-moz-placeholder {
+  color: #999;
+}
+
+ion-input::part(native):-ms-input-placeholder {
+  color: #999;
+}
+
+ion-input::part(native)::placeholder {
+  color: #999;
+}

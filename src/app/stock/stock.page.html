@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Suivi des Stocks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let product of products">
+    <ion-card-header>
+      <ion-card-title>{{ product.name }}</ion-card-title>
+      <ion-card-subtitle>
+        Catégorie : {{ product.category }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Stock disponible :
+        <span [ngClass]="{'low-stock': product.stock <= product.lowStockThreshold}">
+          {{ product.stock }}
+        </span>
+      </p>
+      <p>Prix : {{ product.price | currency }}</p>
+      <p>Dernière mise à jour : {{ product.lastUpdated | date:'short' }}</p>
+      <ion-button
+        *ngIf="product.stock === 0"
+        color="danger"
+        (click)="orderProduct(product)">
+        Passer une commande
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

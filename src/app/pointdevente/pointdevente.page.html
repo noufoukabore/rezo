@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestion des Points de Vente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Liste des Points de Vente -->
+  <ion-list>
+    <ion-item *ngFor="let point of pointsDeVente">
+      <ion-label>
+        <h2>{{ point.nom }}</h2>
+        <p>{{ point.adresse }}</p>
+        <p>{{ point.typeProduit }}</p>
+        <p>Latitude: {{ point.geolocalisation?.latitude }}, Longitude: {{ point.geolocalisation?.longitude }}</p>
+        <p *ngIf="point.document">{{ point.document }}</p> <!-- Affiche le nom du document uploadé -->
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="primary" (click)="openEditForm(point)">
+          Modifier
+        </ion-button>
+        <ion-button color="danger" (click)="deletePoint(point.id)">
+          Supprimer
+        </ion-button>
+        <ion-button color="secondary" (click)="consultStock(point)">
+          Consulter Stock
+        </ion-button>
+        <ion-button color="success" (click)="placeOrder(point)">
+          Passer Commande
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <!-- Bouton pour Ajouter un Point de Vente -->
+  <ion-button expand="full" (click)="openAddForm()">Ajouter un Point de Vente</ion-button>
+
+  <!-- Modal pour Ajouter/Modifier un Point de Vente -->
+  <ion-modal [isOpen]="isModalOpen" (willDismiss)="closeModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{ isEditing ? 'Modifier' : 'Ajouter' }} Point de Vente</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">Fermer</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <form [formGroup]="pointDeVenteForm" (ngSubmit)="submitForm()">
+          <ion-item>
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input formControlName="nom"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Adresse</ion-label>
+            <ion-input formControlName="adresse"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Type de Produit</ion-label>
+            <ion-input formControlName="typeProduit"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Géolocalisation</ion-label>
+            <ion-button (click)="getCurrentLocation()">
+              <ion-icon slot="icon-only" name="location-outline"></ion-icon>
+            </ion-button>
+            <p>Latitude: {{ latitude }}, Longitude: {{ longitude }}</p>
+            <div id="map" style="height: 200px; width: 100%;"></div>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Documents Officiels</ion-label>
+            <input type="file" (change)="uploadDocument($event)" title="Télécharger un document officiel" />
+          </ion-item>
+          <ion-button expand="full" type="submit">{{ isEditing ? 'Modifier' : 'Ajouter' }}</ion-button>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

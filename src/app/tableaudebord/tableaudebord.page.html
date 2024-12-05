@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref ="/connexion"></ion-back-button>
+    </ion-buttons>
+    <ion-title>tableau de bord</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col  size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title color="tertiary">Total Points de Vente</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2>{{ totalPointsDeVente }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col  size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title color="tertiary">Total Commerciaux</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2>{{ totalCommerciaux }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col   size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title color="tertiary">Commandes en attente</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2>{{ commandesEnAttente }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title color="tertiary">Visites réalisées</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2 >{{ visitesRealisees }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+   <!-- Raccourcis vers les fonctionnalités principales -->
+  <ion-list>
+    <ion-item button [routerLink]="['/pointdevente']">
+      <ion-icon name="storefront-outline" slot="start"></ion-icon>
+      Gérer les Points de Vente
+    </ion-item>
+  <ion-item button [routerLink]="['/stock']">
+    <ion-icon name="cube-outline" slot="start"></ion-icon>
+    Stock
+  </ion-item>
+    <ion-item button routerLink=" /commande">
+      <ion-icon name="cart-outline" slot="start"></ion-icon>
+      Gérer les Commandes
+    </ion-item>
+  <ion-item button [routerLink]="['/visite']">
+    <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+    Gérer les Visites
+  </ion-item>
+  <ion-item button [routerLink]="['/commercial']">
+    <ion-icon name="accessibility-sharp" slot="start"></ion-icon>
+    Gérer les Commerciaux
+  </ion-item>
+    <ion-item button routerLink="/statistiques">
+      <ion-icon name="analytics-outline" slot="start"></ion-icon>
+      Statistiques et Rapports
+    </ion-item>
+  </ion-list>
+
+</ion-content>

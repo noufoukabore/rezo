@@ -1,0 +1,13 @@
+ion-toolbar {
+  --background: white;
+  /* Couleur de l'en-tête */
+  --color: rgb(83, 118, 233);
+  /* Couleur du texte */
+}
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

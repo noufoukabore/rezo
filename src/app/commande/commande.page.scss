@@ -1,0 +1,152 @@
+/* Couleur du header */
+ion-header {
+  --background: #4CAF50;
+  /* Vert */
+  --color: white;
+  /* Texte en blanc */
+}
+
+ion-toolbar {
+  --background: #4CAF50;
+  /* Vert pour la barre d'outils */
+  --color: white;
+  /* Couleur du texte */
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Légère ombre pour donner du relief */
+}
+
+/* Couleur des cartes */
+ion-card {
+  --background: #f9f9f9;
+  /* Gris clair pour l'arrière-plan des cartes */
+  --color: #333;
+  /* Texte en gris foncé */
+  margin: 15px;
+  border-radius: 10px;
+  /* Coins arrondis */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Ombre douce */
+}
+
+ion-card-header {
+  --background: #e0e0e0;
+  /* Gris pour l'en-tête */
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  /* Coins arrondis uniquement en haut */
+}
+
+ion-card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: vert;
+  /* Bleu pour le titre */
+}
+
+/* Liste des commandes */
+.commandes-container ion-list ion-item {
+  border-bottom: 1px solid #ddd;
+  /* Ligne de séparation */
+  padding: 10px;
+}
+
+ion-label h2 {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #4CAF50;
+  /* Vert pour les titres des commandes */
+}
+
+ion-label p {
+  font-size: 0.9rem;
+  color: #666;
+  /* Gris pour les informations supplémentaires */
+}
+
+ion-label strong {
+  color: #333;
+  /* Texte fort en gris foncé */
+}
+
+/* Couleur des boutons */
+ion-button {
+  --background: #4CAF50;
+  /* Vert pour les boutons par défaut */
+  --color: white;
+  /* Texte en blanc */
+  margin: 5px;
+  padding: 0 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  /* Légers coins arrondis */
+}
+
+ion-button[color="danger"] {
+  --background: #f44336;
+  /* Rouge pour les boutons de danger */
+  --color: white;
+}
+
+/* Section "Passer une Nouvelle Commande" */
+ion-card-content {
+  ion-item {
+    margin: 10px 0;
+    --background: transparent;
+    /* Fond transparent pour les champs */
+  }
+
+  ion-label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+    /* Gris foncé pour les étiquettes */
+  }
+
+  ion-input,
+  ion-select,
+  ion-datetime {
+    --background: #fff;
+    /* Blanc pour les champs */
+    --color: #333;
+    /* Texte en gris foncé */
+    border: 1px solid #ddd;
+    /* Bordure grise */
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  ion-button {
+    margin-top: 20px;
+    --background: #007bff;
+    /* Bleu pour le bouton "Confirmer la commande" */
+    --color: white;
+  }
+}
+
+/* Couleur de l'arrière-plan principal */
+ion-content {
+  --background: #ffffff;
+  /* Blanc pur */
+  padding: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  ion-card {
+    margin: 10px;
+  }
+
+  ion-label h2 {
+    font-size: 0.9rem;
+  }
+
+  ion-label p {
+    font-size: 0.8rem;
+  }
+
+  ion-button {
+    font-size: 0.8rem;
+  }
+}
